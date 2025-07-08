@@ -3,6 +3,8 @@ import { Clock, MapPin, TrendingUp, Users, Package, Gavel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { useNavigate } from "react-router-dom";
 
 interface Listing {
   id: string;
@@ -161,6 +163,7 @@ const ListingCard = ({ listing }: { listing: Listing }) => {
 };
 
 export const HomePage = () => {
+  const navigate = useNavigate();
   const [listings, setListings] = useState<Listing[]>(mockListings);
   const [sortBy, setSortBy] = useState<"bid" | "time">("bid");
 
@@ -190,12 +193,13 @@ export const HomePage = () => {
                 <Gavel className="h-5 w-5 text-primary-foreground" />
               </div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                AuctionHub
+                Mandiwatch
               </h1>
             </div>
             
             <div className="flex items-center gap-4">
-              <Button variant="ghost">Profile</Button>
+              <ThemeToggle />
+              <Button variant="ghost" onClick={() => navigate("/profile")}>Profile</Button>
               <Button variant="auction">List Item</Button>
             </div>
           </div>
