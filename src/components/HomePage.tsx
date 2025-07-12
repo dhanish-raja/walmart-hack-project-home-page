@@ -7,7 +7,6 @@ import { mockListings } from "@/data/mockListings";
 import { Listing } from "@/types/listing";
 
 export const HomePage = () => {
-  console.log("HomePage component rendering");
   const [listings, setListings] = useState<Listing[]>(mockListings);
   const [sortBy, setSortBy] = useState<"bid" | "time">("bid");
 
