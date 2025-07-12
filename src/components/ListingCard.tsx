@@ -41,11 +41,11 @@ export const ListingCard = ({ listing }: ListingCardProps) => {
         <div className="flex justify-between items-center">
           <div>
             <p className="text-sm text-muted-foreground">Current Bid</p>
-            <p className="text-2xl font-bold text-success">${listing.currentBid}</p>
+            <p className="text-2xl font-bold text-success">₹{listing.currentBid}</p>
           </div>
           <div className="text-right">
             <p className="text-sm text-muted-foreground">Base Price</p>
-            <p className="text-lg text-foreground">${listing.basePrice}</p>
+            <p className="text-lg text-foreground">₹{listing.basePrice}</p>
           </div>
         </div>
         
